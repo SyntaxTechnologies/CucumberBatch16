@@ -16,3 +16,50 @@ right click - file - name of file - test.feature (.feature is the extension)
 US-12345
 Perform login
 
+class 2 -
+recap - cucumber/gherkin/BDD
+
+we write such things in feature file where every test case will be considered as scenario
+
+framework -
+build management tool - maven
+programming language - java
+tool - selenium & cucumber
+
+main - for writing the development code
+test - for writing the testing code
+
+technical - java
+non technical - resources
+
+US - perform login
+
+Feature: This is the name of my user story
+Scenario: This is the name of my test case
+Tags- Given, When, And, Then
+
+rules -
+never add even a small character or . in your step in feature file after step def
+otherwise it will not find the exact linking of the step def
+
+never create duplicate step def for the steps otherwise it will confuse and will
+throw an exception
+
+login.feature
+Given I am launching the application
+
+add employee.feature
+Given I am launching the application
+
+
+
+
+
+
+
+
+
+
+
+
+
