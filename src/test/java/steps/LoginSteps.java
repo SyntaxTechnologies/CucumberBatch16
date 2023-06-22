@@ -7,12 +7,14 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import utils.CommonMethods;
 
+import java.rmi.activation.ActivationGroupDesc;
 import java.time.Duration;
 
-public class LoginSteps {
+public class LoginSteps extends CommonMethods {
 
-    public WebDriver driver;
+   // public WebDriver driver;
 
     @Given("user is navigated to HRMS application")
     public void user_is_navigated_to_hrms_application() {

@@ -5,14 +5,14 @@ import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import utils.CommonMethods;
 
 import java.time.Duration;
 
-public class EmployeeSearchSteps {
-        public WebDriver driver;
+public class EmployeeSearchSteps extends CommonMethods {
 
-        @When("user clicks on PIM option and Employee list option")
-        public void user_clicks_on_pim_option_and_employee_list_option() {
+    @When("user clicks on PIM option and Employee list option")
+    public void user_clicks_on_pim_option_and_employee_list_option() {
       //we are clicking on pim and emp list option
         WebElement pimOption = driver.findElement(By.id("menu_pim_viewPimModule"));
         pimOption.click();
@@ -26,7 +26,6 @@ public class EmployeeSearchSteps {
     public void user_enters_valid_employee_id() {
         WebElement searchIdTextBox = driver.findElement(By.id("empsearch_id"));
         searchIdTextBox.sendKeys("54469A");
-
     }
 
     @When("user clicks on search button")
