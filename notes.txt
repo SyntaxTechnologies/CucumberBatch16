@@ -51,6 +51,18 @@ Given I am launching the application
 add employee.feature
 Given I am launching the application
 
+User story - searching an employee in HRMS application
+
+US 121 - search employee by id
+
+
+
+
+US 122 - search employee by name
+
+
+
+
 
 
 

@@ -30,7 +30,6 @@ public class LoginSteps {
         //entering the credentials
         usernameField.sendKeys("admin");
         passwordField.sendKeys("Hum@nhrm123");
-
     }
 
     @When("user clicks on login button")
