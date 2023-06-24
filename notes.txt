@@ -84,6 +84,10 @@ recap -
     (scenarioA and scenarioB), only the test case having both tags will be executed
 
 
+    login scenario -
+        admin login
+        ess login
+        invalid login
 
 
 
