@@ -89,6 +89,13 @@ recap -
         ess login
         invalid login
 
+    Background - when the flow of all the scenarios is same in one feature file,
+    it will execute before all the scenarios.
+    it will be limited to one feature file.
+    for every feature file, there will be different background
+
+
+
 
 
 
