@@ -19,10 +19,11 @@ public class LoginSteps extends CommonMethods {
     @Given("user is navigated to HRMS application")
     public void user_is_navigated_to_hrms_application() {
         //to launch chrome browser
-        driver = new ChromeDriver();
-        driver.get("http://hrm.syntaxtechs.net/humanresources/symfony/web/index.php/auth/login");
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        openBrowserAndNavigateToURL();
+      //  driver = new ChromeDriver();
+        //driver.get("http://hrm.syntaxtechs.net/humanresources/symfony/web/index.php/auth/login");
+        //driver.manage().window().maximize();
+        //driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
 
     @When("user enters valid admin username and password")

@@ -94,6 +94,35 @@ recap -
     it will be limited to one feature file.
     for every feature file, there will be different background
 
+config.prop - to keep all the configurations related parameters in it
+config reader class - read the data from .prop files
+constants class - to keep all the paths from this class
+
+Hooks - when we need to write the pre condition and post condition for the
+complete project all the test cases, we use hooks.
+
+we have 2 hooks in cucumber-
+@before - pre condition of all the test cases
+@after - post condition of all the test cases
+
+Rule - we must create hooks class in steps package
+
+Hooks vs Background -
+Hooks will execute first and then background will execute
+Hooks is same for all the feature file but backgroun is different for all the featurtefile
+
+order of execution -
+first hooks will execute
+then background will execute
+then test scenario
+then hooks will execute
+
+
+
+
+
+
+
 
 
 

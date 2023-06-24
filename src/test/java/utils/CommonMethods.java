@@ -10,7 +10,7 @@ import java.time.Duration;
 public class CommonMethods {
     public static WebDriver driver;
 
-    public static void openBrowserAndNavigateToURL(String URL, String browser) {
+    public static void openBrowserAndNavigateToURL() {
         ConfigReader.readProperties(Constants.CONFIG_READER_PATH);
         switch (ConfigReader.getPropertyValue("browser")) {
             case "chrome":
