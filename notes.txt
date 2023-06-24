@@ -60,7 +60,20 @@ US 121 - search employee by id
 
 US 122 - search employee by name
 
+Class 3 -
 
+recap -
+    one user story, we need one feature file
+    these scenarios are linked with the step definitions
+
+    we have to write the code/script in the step definition itself
+
+    test runner -
+    we use junit-cucumber to run our tests
+    cucumber options to provide multiple customizable options
+
+    features - path to all the feature files
+    glue -
 
 
 
