@@ -73,7 +73,19 @@ recap -
     cucumber options to provide multiple customizable options
 
     features - path to all the feature files
-    glue -
+    glue - to provide the path of step def package
+    dry run - to generate missing step def, when we set it to true, it will generate
+    all the step def
+    tags - to execute scenarios of our choice, we can use different tags in scenarios
+
+    we use OR keyword in tags to execute either scenario A or scenario B
+    (ScenarioA or ScenarioB)
+    we use AND keyword in tags to execute the scenario having both conditions true
+    (scenarioA and scenarioB), only the test case having both tags will be executed
+
+
+
+
 
 
 

@@ -11,7 +11,7 @@ Feature: Search an employee
     And user clicks on search button
     Then user is able to see employee information
 
-  @regression @smoke @sprint2
+  @regression @smoke @sprint20
   Scenario: Search employee by name
     Given user is navigated to HRMS application
     When user enters valid admin username and password
