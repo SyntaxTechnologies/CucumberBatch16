@@ -12,10 +12,10 @@ import org.junit.runner.RunWith;
       glue = "steps",
       //it stops actual execution, it quickly scans all the steps and will
         //provide the missing step definition
-      dryRun = false
+      dryRun = false,
+      tags = "@regression"
+
 )
-
-
 
 public class RunnerClass {
 

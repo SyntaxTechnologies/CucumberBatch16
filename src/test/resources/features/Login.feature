@@ -1,4 +1,6 @@
 Feature: Login related scenarios
+
+  @sprint1 @regression @smoke @newTestcase @newFeature
   Scenario: Valid admin login
     #dont add anything in the step after creating step def
     Given user is navigated to HRMS application

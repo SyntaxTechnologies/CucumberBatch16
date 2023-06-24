@@ -1,5 +1,6 @@
 Feature: Search an employee
 
+  @smoke
   Scenario: Search employee by id
     Given user is navigated to HRMS application
     When user enters valid admin username and password
