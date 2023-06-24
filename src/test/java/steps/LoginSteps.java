@@ -8,6 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import utils.CommonMethods;
+import utils.ConfigReader;
 
 import java.rmi.activation.ActivationGroupDesc;
 import java.time.Duration;
@@ -31,8 +32,8 @@ public class LoginSteps extends CommonMethods {
         WebElement usernameField = driver.findElement(By.id("txtUsername"));
         WebElement passwordField = driver.findElement(By.id("txtPassword"));
         //entering the credentials
-        usernameField.sendKeys("admin");
-        passwordField.sendKeys("Hum@nhrm123");
+        usernameField.sendKeys(ConfigReader.getPropertyValue("username"));
+        passwordField.sendKeys(ConfigReader.getPropertyValue("password"));
     }
 
     @When("user clicks on login button")

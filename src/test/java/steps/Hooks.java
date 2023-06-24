@@ -15,5 +15,4 @@ public class Hooks extends CommonMethods {
     public void end(){
         closeBrowser();
     }
-
 }
