@@ -10,34 +10,34 @@ public class AddEmployeeSteps extends CommonMethods {
 
     @When("user clicks on PIM option")
     public void user_clicks_on_pim_option() {
-        WebElement pimOption = driver.findElement(By.id("menu_pim_viewPimModule"));
+      //  WebElement pimOption = driver.findElement(By.id("menu_pim_viewPimModule"));
      //   pimOption.click();
-        click(pimOption);
+        click(dashboardPage.pimOption);
     }
 
     @When("user clicks on add employee button")
     public void user_clicks_on_add_employee_button() {
-        WebElement addEmployeeBUtton = driver.findElement(By.id("menu_pim_addEmployee"));
+     //   WebElement addEmployeeBUtton = driver.findElement(By.id("menu_pim_addEmployee"));
        // addEmployeeBUtton.click();
-        click(addEmployeeBUtton);
+        click(dashboardPage.addEmployeeButton);
     }
 
     @When("user enters firstname and lastname")
     public void user_enters_firstname_and_lastname() {
-        WebElement firstNameTextField = driver.findElement(By.id("firstName"));
+      //  WebElement firstNameTextField = driver.findElement(By.id("firstName"));
        // firstNameTextField.sendKeys("aendro");
-        sendText("aendro", firstNameTextField);
+        sendText("aendro", addEmployeePage.firstNameField);
 
-        WebElement lastNameTextField = driver.findElement(By.id("lastName"));
+       // WebElement lastNameTextField = driver.findElement(By.id("lastName"));
        // lastNameTextField.sendKeys("farewell");
-        sendText("farewell", lastNameTextField);
+        sendText("farewell", addEmployeePage.lastNameField);
     }
 
     @When("user clicks on save button")
     public void user_clicks_on_save_button() {
-        WebElement saveButton = driver.findElement(By.id("btnSave"));
+     //   WebElement saveButton = driver.findElement(By.id("btnSave"));
        // saveButton.click();
-        click(saveButton);
+        click(addEmployeePage.saveButton);
     }
 
     @Then("employee added successfully")
