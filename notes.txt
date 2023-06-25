@@ -144,7 +144,10 @@ tags,
 plugin - pretty
 monochrome - true
 
+we need to write a function for screenshot which will save my screenshot for all the
+test cases with different names so that it will not be overriden
 
+screenshot method in cucumber - here it accepts array of byte for pictures
 
 
 
