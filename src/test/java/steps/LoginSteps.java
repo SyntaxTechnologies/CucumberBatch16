@@ -3,10 +3,6 @@ package steps;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import pages.LoginPage;
 import utils.CommonMethods;
 import utils.ConfigReader;
@@ -28,7 +24,7 @@ public class LoginSteps extends CommonMethods {
     @When("user enters valid admin username and password")
     public void user_enters_valid_admin_username_and_password() {
         //creating the object of the class to access all the web elements from it
-        LoginPage loginPage = new LoginPage();
+       // LoginPage loginPage = new LoginPage();
        // WebElement usernameField = driver.findElement(By.id("txtUsername"));
       //  WebElement passwordField = driver.findElement(By.id("txtPassword"));
         //entering the credentials
@@ -40,7 +36,7 @@ public class LoginSteps extends CommonMethods {
 
     @When("user clicks on login button")
     public void user_clicks_on_login_button() {
-        LoginPage loginPage = new LoginPage();
+       // LoginPage loginPage = new LoginPage();
        // WebElement loginButton = driver.findElement(By.name("Submit"));
         //loginButton.click();
         click(loginPage.loginButton);
@@ -53,7 +49,7 @@ public class LoginSteps extends CommonMethods {
 
     @When("user enters ess username and password")
     public void user_enters_ess_username_and_password() {
-        LoginPage loginPage = new LoginPage();
+      //  LoginPage loginPage = new LoginPage();
       //  WebElement usernameField = driver.findElement(By.id("txtUsername"));
       //  WebElement passwordField = driver.findElement(By.id("txtPassword"));
         //logged in via normal employee
@@ -69,7 +65,7 @@ public class LoginSteps extends CommonMethods {
        // WebElement passwordField = driver.findElement(By.id("txtPassword"));
        // usernameField.sendKeys("admin123");
       //  passwordField.sendKeys("Hum@nhrm123");
-        LoginPage loginPage = new LoginPage();
+      //  LoginPage loginPage = new LoginPage();
         sendText("admin123", loginPage.usernameField);
         sendText("Hum#n", loginPage.passwordField);
     }
@@ -78,4 +74,5 @@ public class LoginSteps extends CommonMethods {
     public void error_message_is_displayed() {
         System.out.println("Error message is displayed");
     }
+
 }

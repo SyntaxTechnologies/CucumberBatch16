@@ -10,6 +10,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import steps.PageInitializer;
 
 import java.io.File;
 import java.io.IOException;
@@ -18,7 +19,7 @@ import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.Date;
 
-public class CommonMethods {
+public class CommonMethods extends PageInitializer {
     public static WebDriver driver;
 
     public static void openBrowserAndNavigateToURL() {
@@ -34,6 +35,8 @@ public class CommonMethods {
         driver.manage().window().maximize();
         driver.get(ConfigReader.getPropertyValue("url"));
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+        //this method is going to initialize all the objects available inside this method
+        initializePageObjects();
     }
 
     public static void closeBrowser() {
