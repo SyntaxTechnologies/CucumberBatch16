@@ -149,6 +149,10 @@ test cases with different names so that it will not be overriden
 
 screenshot method in cucumber - here it accepts array of byte for pictures
 
+POM - page object model design pattern
+for every screen/page in the application, we create a separate  class for it and
+keep all the locators/webelements of this page in this class and we create a key of
+locators which we will pass in every step.
 
 
 
