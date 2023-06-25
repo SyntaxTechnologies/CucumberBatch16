@@ -10,9 +10,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import utils.CommonMethods;
 import utils.ConfigReader;
 
-import java.rmi.activation.ActivationGroupDesc;
-import java.time.Duration;
-
 public class LoginSteps extends CommonMethods {
 
    // public WebDriver driver;
@@ -32,14 +29,17 @@ public class LoginSteps extends CommonMethods {
         WebElement usernameField = driver.findElement(By.id("txtUsername"));
         WebElement passwordField = driver.findElement(By.id("txtPassword"));
         //entering the credentials
-        usernameField.sendKeys(ConfigReader.getPropertyValue("username"));
-        passwordField.sendKeys(ConfigReader.getPropertyValue("password"));
+      //  usernameField.sendKeys(ConfigReader.getPropertyValue("username"));
+     //   passwordField.sendKeys(ConfigReader.getPropertyValue("password"));
+            sendText(ConfigReader.getPropertyValue("username"), usernameField);
+            sendText(ConfigReader.getPropertyValue("password"), passwordField);
     }
 
     @When("user clicks on login button")
     public void user_clicks_on_login_button() {
         WebElement loginButton = driver.findElement(By.name("Submit"));
-        loginButton.click();
+        //loginButton.click();
+        click(loginButton);
     }
 
     @Then("user is successfully logged in the application")
@@ -52,16 +52,20 @@ public class LoginSteps extends CommonMethods {
         WebElement usernameField = driver.findElement(By.id("txtUsername"));
         WebElement passwordField = driver.findElement(By.id("txtPassword"));
         //logged in via normal employee
-        usernameField.sendKeys("dalima123");
-        passwordField.sendKeys("Hum@nhrm123");
+        //usernameField.sendKeys("dalima123");
+      //  passwordField.sendKeys("Hum@nhrm123");
+        sendText("dalima123", usernameField);
+        sendText("Hum@nhrm123", passwordField);
     }
 
     @When("user enters invalid admin username and password")
     public void user_enters_invalid_admin_username_and_password() {
         WebElement usernameField = driver.findElement(By.id("txtUsername"));
         WebElement passwordField = driver.findElement(By.id("txtPassword"));
-        usernameField.sendKeys("admin123");
-        passwordField.sendKeys("Hum@nhrm123");
+       // usernameField.sendKeys("admin123");
+      //  passwordField.sendKeys("Hum@nhrm123");
+        sendText("admin123", usernameField);
+        sendText("Hum#n", passwordField);
     }
 
     @Then("error message is displayed")

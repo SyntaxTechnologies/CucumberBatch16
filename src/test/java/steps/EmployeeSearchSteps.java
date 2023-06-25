@@ -7,31 +7,33 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import utils.CommonMethods;
 
-import java.time.Duration;
-
 public class EmployeeSearchSteps extends CommonMethods {
 
     @When("user clicks on PIM option and Employee list option")
     public void user_clicks_on_pim_option_and_employee_list_option() {
       //we are clicking on pim and emp list option
         WebElement pimOption = driver.findElement(By.id("menu_pim_viewPimModule"));
-        pimOption.click();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        //pimOption.click();
+        click(pimOption);
+       // driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         WebElement EmpListOption = driver.findElement(By.id("menu_pim_viewEmployeeList"));
-        EmpListOption.click();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+       // EmpListOption.click();
+        click(EmpListOption);
+        //driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
 
     @When("user enters valid employee id")
     public void user_enters_valid_employee_id() {
         WebElement searchIdTextBox = driver.findElement(By.id("empsearch_id"));
-        searchIdTextBox.sendKeys("54469A");
+        // searchIdTextBox.sendKeys("54469A");
+        sendText("54469A", searchIdTextBox);
     }
 
     @When("user clicks on search button")
     public void user_clicks_on_search_button() {
        WebElement searchButton = driver.findElement(By.id("searchBtn"));
-       searchButton.click();
+      // searchButton.click();
+        click(searchButton);
     }
 
     @Then("user is able to see employee information")
@@ -42,6 +44,7 @@ public class EmployeeSearchSteps extends CommonMethods {
     @When("user enters valid employee name in name text box")
     public void user_enters_valid_employee_name_in_name_text_box() {
        WebElement empNameField = driver.findElement(By.id("empsearch_employee_name_empName"));
-       empNameField.sendKeys("selab");
+      // empNameField.sendKeys("selab");
+        sendText("selab", empNameField);
     }
 }
