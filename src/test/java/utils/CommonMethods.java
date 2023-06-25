@@ -1,12 +1,18 @@
 package utils;
 
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.File;
+import java.io.IOException;
 import java.io.ObjectInputFilter;
 import java.time.Duration;
 
@@ -51,6 +57,29 @@ public class CommonMethods {
     public static void click(WebElement element){
             waitForClickability(element);
             element.click();
+    }
+
+
+    public static void selectFromDropdown(WebElement dropDown, String visibleText) {
+        Select sel = new Select(dropDown);
+        sel.selectByVisibleText(visibleText);
+    }
+
+    public static void selectFromDropdown(String value, WebElement dropDown) {
+        Select sel = new Select(dropDown);
+        sel.selectByValue(value);
+    }
+
+    public static void selectFromDropdown(WebElement dropDown, int index) {
+        Select sel = new Select(dropDown);
+        sel.selectByIndex(index);
+    }
+
+    public static void takeScreenshot(String fileName) throws IOException {
+        TakesScreenshot ts = (TakesScreenshot) driver;
+        File screenShot = ts.getScreenshotAs(OutputType.FILE);
+        FileUtils.copyFile(screenShot,
+                new File(System.getProperty("user.dir") + "\\Files\\Screenshots\\" + fileName+".png"));
     }
 
 }
