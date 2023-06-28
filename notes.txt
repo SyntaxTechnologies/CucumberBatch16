@@ -168,6 +168,7 @@ it should be easy to maintain
 
 we created loginpage, employeesearchpage, dashboardpage, addemployeepage
 
+data driven testing - when your one test case executes against multiple set of data
 
 
 
