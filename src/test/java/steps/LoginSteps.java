@@ -75,4 +75,10 @@ public class LoginSteps extends CommonMethods {
         System.out.println("Error message is displayed");
     }
 
+    @When("user enters {string} and {string} and verifying the {string} for the combinations")
+    public void user_enters_and_and_verifying_the_for_the_combinations
+            (String username, String password, String errorMessage) {
+            //we need to write the code here to match the errors
+    }
+
 }
