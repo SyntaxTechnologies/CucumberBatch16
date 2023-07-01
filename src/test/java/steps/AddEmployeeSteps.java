@@ -6,6 +6,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import utils.CommonMethods;
 
+import java.util.List;
+import java.util.Map;
+
 public class AddEmployeeSteps extends CommonMethods {
 
     @When("user clicks on PIM option")
@@ -58,6 +61,31 @@ public class AddEmployeeSteps extends CommonMethods {
         sendText(firstName, addEmployeePage.firstNameField);
         sendText(middleName, addEmployeePage.middleNameField);
         sendText(lastName, addEmployeePage.lastNameField);
+    }
+
+    @When("user enters firstname and middlename and lastname and verify employee has added")
+    public void user_enters_firstname_and_middlename_and_lastname_and_verify_employee_has_added
+            (io.cucumber.datatable.DataTable dataTable) {
+       //we need list of maps to get multiple values from datatable which is coming
+        // from feature file
+        List<Map<String, String>> employeeNames = dataTable.asMaps();
+
+        for (Map<String, String> employee:employeeNames
+             ) {
+            //getting the values against the key in map
+           String firstNameValue = employee.get("firstName");
+           String middleNameValue = employee.get("middleName");
+           String lastNameValue = employee.get("lastName");
+
+           //filling the name in the fields
+           sendText(firstNameValue, addEmployeePage.firstNameField);
+           sendText(middleNameValue, addEmployeePage.middleNameField);
+           sendText(lastNameValue, addEmployeePage.lastNameField);
+           click(addEmployeePage.saveButton);
+           //after adding one employee, we will add another employee
+            //for this, we are clicking on add employee button in the loop ittself
+            click(dashboardPage.addEmployeeButton);
+        }
     }
 
 }
