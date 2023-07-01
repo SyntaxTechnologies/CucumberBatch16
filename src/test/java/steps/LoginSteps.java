@@ -3,6 +3,7 @@ package steps;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 import pages.LoginPage;
 import utils.CommonMethods;
 import utils.ConfigReader;
@@ -77,8 +78,14 @@ public class LoginSteps extends CommonMethods {
 
     @When("user enters {string} and {string} and verifying the {string} for the combinations")
     public void user_enters_and_and_verifying_the_for_the_combinations
-            (String username, String password, String errorMessage) {
-            //we need to write the code here to match the errors
+            (String username, String password, String errorMessageExpected) {
+            sendText(username, loginPage.usernameField);
+            sendText(password, loginPage.passwordField);
+            click(loginPage.loginButton);
+            //fetching the error message from the web element
+            String errorMessageActual = loginPage.errorMessageField.getText();
+            //error message coming from feature file too which we can compare
+            Assert.assertEquals("value does not match", errorMessageExpected, errorMessageActual);
     }
 
 }

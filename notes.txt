@@ -170,6 +170,20 @@ we created loginpage, employeesearchpage, dashboardpage, addemployeepage
 
 data driven testing - when your one test case executes against multiple set of data
 
+Class 6 -
+recap -
+we passed data from feature file itself to add one employee
+
+scenario - just a test case
+scenario-outline - with examples table - we pass key and value
+we implemented POM in all the pages - we setup page initializer class too
+
+we use assertions to verify verification and validation checkpoints
+majorly we work with assertEquals and assertTrue for our test cases
+this assert class comes from org.junit
+
+*******innessa, please find the notes here as per your request*******
+
 
 
 

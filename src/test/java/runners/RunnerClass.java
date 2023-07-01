@@ -12,7 +12,7 @@ import org.junit.runner.RunWith;
       glue = "steps",
       //when dry run is true, it stops actual execution, it quickly scans all the steps and will
         //provide the missing step definition
-      dryRun = true,
+      dryRun = false,
       tags = "@negative",
       //it means sometimes the console output for cucumber test is having some
         //irrelevant information, when you set it to true, it removes all that
