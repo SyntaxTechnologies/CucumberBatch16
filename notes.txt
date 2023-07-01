@@ -184,7 +184,26 @@ this assert class comes from org.junit
 
 *******innessa, please find the notes here as per your request*******
 
+in data table - hooks and background executes just one time
+in examples table - hooks and background executed as many times as data set
 
+data table is applicable for just one step
+examples table is applicable for one complete scenario
+
+verification is checking the existance of element
+validation is checking the functionality of the element
+
+in cucumber framework you can add employees using multiple ways
+using hardcoded data
+using string  value from feature
+using examples table in scenario outline
+using data table in feature file
+using excel files
+
+
+in excel file - we have 2 types of extensions
+.xls - HSSF workbook
+.xlsx - XSSF workbook
 
 
 
