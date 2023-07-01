@@ -38,3 +38,10 @@ Feature: Adding employee in HRMS application
     |zara     |ms        |zaca    |
     |mary     |ms        |django  |
     |sadam    |ms        |adam    |
+
+  @excel
+  Scenario: adding multiple employees using excel file
+    When user adds multiple employees using excel from "EmployeeDataBatch16" and verify it
+
+
+
