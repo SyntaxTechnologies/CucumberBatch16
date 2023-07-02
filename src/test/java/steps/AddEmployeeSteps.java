@@ -149,10 +149,10 @@ public class AddEmployeeSteps extends CommonMethods {
                 Assert.assertEquals(expectedData, rowText);
                 //you can use below code too to verify the data
               //  Assert.assertTrue(expectedData.equals(rowText));
-
             }
             //to add more employees we need to click on add employee button
             click(dashboardPage.addEmployeeButton);
         }
+
     }
 }

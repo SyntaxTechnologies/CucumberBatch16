@@ -205,6 +205,25 @@ in excel file - we have 2 types of extensions
 .xls - HSSF workbook
 .xlsx - XSSF workbook
 
+class 7
+recap -
+ examples table and data table -
+
+ in data table, we use scenario instead of scenario outline
+ data table is limited to one step but examples table works for all the scenario
+
+ in data table, we don't use examples key word and we don't pass keys in the step
+
+ hooks execute one time, background executes one time and scenario executes based on data set
+
+ adding the employees using excel file -
+ excel reader class to read the data from excel file
+ verified the employee has been added
+
+why reports - it is an artifact/proof that you have executed the scenario
+it gives you detailed information, how many test cases passed and failed
+
+html report - will be generated once you execute your code from runner class
 
 
 
