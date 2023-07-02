@@ -224,9 +224,22 @@ why reports - it is an artifact/proof that you have executed the scenario
 it gives you detailed information, how many test cases passed and failed
 
 html report - will be generated once you execute your code from runner class
+to open the report - right click on the report - select open in - select browser - chrome
+
+json report - we have to add plugin in runner class
 
 
+here in every framework - we need one point of execution and here this  point is
+pom.xml file (we add dependency, we add runner class, we add plugin, we execute)
 
+to execute runner class from pom.xml file, we need plugin (maven surefire plugin)
+
+
+build success message means your code is working fine and you can proceed further
+everytime we must execute test cases using pom.xml file
+
+to generate the report from pom.xml file, we need to add a plugin called
+maven cucumber reporting plugin
 
 
 
