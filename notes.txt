@@ -241,6 +241,20 @@ everytime we must execute test cases using pom.xml file
 to generate the report from pom.xml file, we need to add a plugin called
 maven cucumber reporting plugin
 
+we are generating the report without screenshot but we need screenshot for all test cases
+
+at the last step I will capture the screenshot
+so that even if it is passed or failed, it will give me that page
+
+there is a class in cucumber called Scenario class
+this scenario class from cucumber holds the complete information of your execution
+
+log 4j - it is a log file which we use for local execution related information
+log4j.xml file is responsible to integrate/add log messages into your framework
+log is the class in which you write all the methods
+DOM configurator is the place where you provide the path of log4j file
+and then you call all the methods to print your messages
+
 
 
 

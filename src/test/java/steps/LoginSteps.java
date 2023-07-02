@@ -3,10 +3,12 @@ package steps;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.apache.log4j.xml.DOMConfigurator;
 import org.junit.Assert;
 import pages.LoginPage;
 import utils.CommonMethods;
 import utils.ConfigReader;
+import utils.Log;
 
 public class LoginSteps extends CommonMethods {
 
@@ -31,8 +33,14 @@ public class LoginSteps extends CommonMethods {
         //entering the credentials
       //  usernameField.sendKeys(ConfigReader.getPropertyValue("username"));
      //   passwordField.sendKeys(ConfigReader.getPropertyValue("password"));
+        ///we are calling DOMConfigurator which is asking for the file which we used
+        //to integrate logs in our project
+        DOMConfigurator.configure("log4j.xml");
+        Log.startTestCase("My batch 16 test case starts here");
         sendText(ConfigReader.getPropertyValue("username"), loginPage.usernameField);
+        Log.info("my username has been entered");
         sendText(ConfigReader.getPropertyValue("password"), loginPage.passwordField);
+        Log.info("My password has been entered");
     }
 
     @When("user clicks on login button")
@@ -45,7 +53,7 @@ public class LoginSteps extends CommonMethods {
 
     @Then("user is successfully logged in the application")
     public void user_is_successfully_logged_in_the_application() {
-        System.out.println("My test case is passed");
+        System.out.println("test case passed");
     }
 
     @When("user enters ess username and password")
