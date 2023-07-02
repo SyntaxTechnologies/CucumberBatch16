@@ -255,6 +255,11 @@ log is the class in which you write all the methods
 DOM configurator is the place where you provide the path of log4j file
 and then you call all the methods to print your messages
 
+75-80 (success rate of automation)
+100 - 80 will be passed - 20 will be failed (example)
+
+rerun plugin we use to create failed.txt file
+this file has all the failed test cases which we can run from failed runner class
 
 
 

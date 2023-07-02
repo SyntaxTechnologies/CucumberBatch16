@@ -66,6 +66,7 @@ public class LoginSteps extends CommonMethods {
       //  passwordField.sendKeys("Hum@nhrm123");
         sendText("dalima123", loginPage.usernameField);
         sendText("Hum@nhrm123", loginPage.passwordField);
+        //System.out.println(10/0);
     }
 
     @When("user enters invalid admin username and password")
