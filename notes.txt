@@ -261,6 +261,48 @@ and then you call all the methods to print your messages
 rerun plugin we use to create failed.txt file
 this file has all the failed test cases which we can run from failed runner class
 
+class 8 -
+recap -
+reporting -
+runner class - html report -
+runner class - json report -
+cucumber maven reporting plugin from pom.xml file
+
+log4j - we added dependency in pom.xml file
+and we created log4j.xml file to generate logs/to integrate logs
+and we created Log class to write all the methods which one we need to use
+then we call DOMConfigurator and methods in steps which will print
+my execution logs in logfile.log
+
+failed.txt - rerun plugin in runner class - the path of failed.txt file which
+will be created after execution and it has the path of all failed scenarios
+and then we create failedrunner class to run only failed test cases
+
+report with screenshot -
+take screenshot - pattern - for taking unique ss everytime
+Hooks - post condition -
+passed and failed folder for ss -
+Scenario class in cucumber - it holds the complete information about execution
+using array of byte - attaching the screenshot in the report
+scenario.attach is the method we use for ss attach
+
+maven -
+
+lifecycle - phases in maven
+compile - source code converts into binary code
+package - code will be packaged into jars (developers use this part)
+install - jars will be installed to local repo
+deploy - here  jars will  be transferred to remote repo
+clean - it deletes target folder
+test - your code will be tested
+
+clean
+compile
+install
+package
+test
+
+
 
 
 

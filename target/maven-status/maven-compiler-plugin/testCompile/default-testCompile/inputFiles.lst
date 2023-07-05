@@ -7,6 +7,8 @@ C:\Users\sohai\IdeaProjects\HRMSB16\src\test\java\steps\EmployeeSearchSteps.java
 C:\Users\sohai\IdeaProjects\HRMSB16\src\test\java\utils\Constants.java
 C:\Users\sohai\IdeaProjects\HRMSB16\src\test\java\pages\AddEmployeePage.java
 C:\Users\sohai\IdeaProjects\HRMSB16\src\test\java\steps\Hooks.java
+C:\Users\sohai\IdeaProjects\HRMSB16\src\test\java\utils\Log.java
+C:\Users\sohai\IdeaProjects\HRMSB16\src\test\java\runners\FailedRunner.java
 C:\Users\sohai\IdeaProjects\HRMSB16\src\test\java\runners\RunnerClass.java
 C:\Users\sohai\IdeaProjects\HRMSB16\src\test\java\steps\AddEmployeeSteps.java
 C:\Users\sohai\IdeaProjects\HRMSB16\src\test\java\runners\RegressionRunner.java

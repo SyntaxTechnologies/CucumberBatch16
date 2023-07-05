@@ -11,7 +11,7 @@ Feature: Login related scenarios
     And user clicks on login button
     Then user is successfully logged in the application
 
-  @employee  @sprint1 @login1
+  @employee  @sprint1 @login
   Scenario: valid ess login
     #Given user is navigated to HRMS application
     When user enters ess username and password

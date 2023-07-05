@@ -1,9 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: runners.RunnerClass
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 27.53 s <<< FAILURE! -- in runners.RunnerClass
-Login related scenarios.valid ess login -- Time elapsed: 8.117 s <<< ERROR!
-java.lang.ArithmeticException: / by zero
-	at steps.LoginSteps.user_enters_ess_username_and_password(LoginSteps.java:69)
-	at ✽.user enters ess username and password(file:///C:/Users/sohai/IdeaProjects/HRMSB16/src/test/resources/features/Login.feature:17)
-
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 15.10 s -- in runners.RunnerClass
