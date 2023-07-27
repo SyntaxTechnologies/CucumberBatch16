@@ -15,6 +15,9 @@ import java.util.Map;
 
 public class AddEmployeeSteps extends CommonMethods {
 
+    String firstName;
+    String middleName;
+    String lastName;
     @When("user clicks on PIM option")
     public void user_clicks_on_pim_option() {
       //  WebElement pimOption = driver.findElement(By.id("menu_pim_viewPimModule"));
@@ -54,7 +57,11 @@ public class AddEmployeeSteps extends CommonMethods {
 
     @When("user enters {string} and {string} and {string}")
     public void user_enters_and_and(String firstName, String middleName, String lastName) {
-       sendText(firstName, addEmployeePage.firstNameField);
+
+        this.firstName=firstName;
+        this.middleName=middleName;
+        this.lastName=lastName;
+        sendText(firstName, addEmployeePage.firstNameField);
        sendText(middleName, addEmployeePage.middleNameField);
        sendText(lastName, addEmployeePage.lastNameField);
     }
@@ -153,6 +160,12 @@ public class AddEmployeeSteps extends CommonMethods {
             //to add more employees we need to click on add employee button
             click(dashboardPage.addEmployeeButton);
         }
+
+    }
+
+
+    @Then("verify employee is stored in database")
+    public void verifyEmployeeIsStoredInDatabase() {
 
     }
 }
