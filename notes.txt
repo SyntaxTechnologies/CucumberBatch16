@@ -302,10 +302,10 @@ install
 package
 test
 
-
-
-
-
+open the cmd where your pom.xml file of the project exists
+mvn clean from cmd to clean the target folder
+mvn clean test will execute your code from cmd
+mvn test -Dcucumber.filter.tags="@invalid" we use to override tags
 
 
 
