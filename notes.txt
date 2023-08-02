@@ -883,6 +883,9 @@ it is a popular framework, it helps us to create the matcher objects.
 mainly developers use it for unit testing and qa use it for integration test in java
 it  is mainly used with frameworks like testng, cucumber, junit, mockito etc.
 
+json dependency -
+
+JsonPath class - in this class we have jsonPath() method
 
 
 
