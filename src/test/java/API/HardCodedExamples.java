@@ -6,6 +6,8 @@ import io.restassured.specification.RequestSpecification;
 import org.junit.Test;
 
 import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.*;
+
 
 public class HardCodedExamples {
 
@@ -40,6 +42,17 @@ public class HardCodedExamples {
       //  System.out.println(response);
         //this method we use to print the response of API in console
         response.prettyPrint();
+        //verify all the values and headers from response
+        response.then().assertThat().body("Employee.emp_firstname",
+                equalTo("justin"));
+        response.then().assertThat().body("Employee.emp_middle_name",
+                equalTo("ms"));
+        response.then().assertThat().body("Message",
+                equalTo("Employee Created"));
+        response.then().assertThat().header("X-Powered-By","PHP/7.2.18");
+
+
+
     }
 
 
