@@ -887,6 +887,44 @@ json dependency -
 
 JsonPath class - in this class we have jsonPath() method
 
+class 6 -
+    recap -
+    we wrote some request in rest assured with java -
+    BaseURI = baseURL
+
+    given - preparing the request
+    when - hitting the endpoint
+    then - verification/validation
+
+    requestspecification - we use our request through this
+    Response - here we store the result after hitting the endpoint
+
+    hamcrest matchers - for verifying the key and value, we use hamcrest matchers framework
+    in this, we used equalTo method for validation of data in the response body
+
+    jsonPath()  is the method which we use to get the value based on the key.
+
+    @Test - it is junit annotation which is used to execute all the test cases
+    @fixmethodorder - methodsorters.nameascending - this is the commmand we use to execute
+    our test cases in alphabetical order.
+
+    operations we did so far -
+    we created the employee
+    we get the created employee
+    we updated the employee
+    we get the updated employee
+    we partially updated employee
+    we get the partially updated employee
+
+    integrate rest assured with cucumber framework
+
+    writing the scenario in feature file
+    create step definition
+    write code in step definition
+
+
+
+
 
 
 
