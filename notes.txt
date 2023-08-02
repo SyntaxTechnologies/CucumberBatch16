@@ -864,9 +864,19 @@ then - assertions/verification
 java - already available
 rest assured - need to add (in pom.xml file, we have to add dependency)
 
+class 5
+recap -
 
+Rest Assured - java based library used to automate API
+it is DSL which allows us to send the data in JSON format
 
+in rest assured
+given - preparation of request
+when - hit the endpoint - send the request
+then - assertions/verifications
 
+rest assured
+json
 
 
 
