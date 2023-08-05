@@ -927,7 +927,7 @@ recap - feature file - we wrote scenario for creating an employee
     -- package - separate package, we created for API scenarios
 
     -- we created JWT via automation.
-
+to keep all the endpoints and URI and headers, we need to create api constants class
 
 
 

@@ -19,5 +19,5 @@ Feature: Syntax API HRMS Flow
     And the employee id "employee.employee_id" must match with globally stored employee id
     And this employee data at "employee" object matches with the data used to create the employee
     |emp_firstname|emp_lastname|emp_middle_name|emp_gender|emp_birthday|emp_status|emp_job_title|
-    |justin       |azzuri      |ms             |Male      |2000-07-21  |happy     |QA           |
+    |justin       |azzuri      |ms             |Male      |2000-07-21  |Happy     |QA           |
 

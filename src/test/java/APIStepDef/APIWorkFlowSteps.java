@@ -6,6 +6,7 @@ import io.cucumber.java.en.When;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import org.junit.Assert;
+import utils.APIConstants;
 
 import java.util.List;
 import java.util.Map;
@@ -22,8 +23,22 @@ public class APIWorkFlowSteps {
 
     @Given("a request is prepared for creating an employee")
     public void a_request_is_prepared_for_creating_an_employee() {
+      /*
         request = given().header("Content-Type","application/json").
                 header("Authorization", GenerateTokenStep.token).body("{\n" +
+                        "  \"emp_firstname\": \"justin\",\n" +
+                        "  \"emp_lastname\": \"azzuri\",\n" +
+                        "  \"emp_middle_name\": \"ms\",\n" +
+                        "  \"emp_gender\": \"M\",\n" +
+                        "  \"emp_birthday\": \"2000-07-21\",\n" +
+                        "  \"emp_status\": \"happy\",\n" +
+                        "  \"emp_job_title\": \"QA\"\n" +
+                        "}");
+                        */
+        request = given().header(APIConstants.HEADER_CONTENT_TYPE_KEY,
+                        APIConstants.HEADER_CONTENT_TYPE_VALUE).
+                header(APIConstants.HEADER_AUTHORIZATION_KEY, GenerateTokenStep.token).
+                body("{\n" +
                         "  \"emp_firstname\": \"justin\",\n" +
                         "  \"emp_lastname\": \"azzuri\",\n" +
                         "  \"emp_middle_name\": \"ms\",\n" +
@@ -36,7 +51,7 @@ public class APIWorkFlowSteps {
 
     @When("a POST call is made to create an employee")
     public void a_post_call_is_made_to_create_an_employee() {
-         response = request.when().post("/createEmployee.php");
+         response = request.when().post(APIConstants.CREATE_EMPLOYEE_URI);
          response.prettyPrint();
     }
 
@@ -61,13 +76,14 @@ public class APIWorkFlowSteps {
 
     @Given("a request is prepared for retrieving an employee")
     public void a_request_is_prepared_for_retrieving_an_employee() {
-        request = given().header("Authorization",GenerateTokenStep.token)
+        request = given().header(APIConstants.HEADER_AUTHORIZATION_KEY,
+                        GenerateTokenStep.token)
                 .queryParam("employee_id", employee_id);
     }
 
     @When("a GET call is made to retrieve the employee")
     public void a_get_call_is_made_to_retrieve_the_employee() {
-        response = request.when().get("/getOneEmployee.php");
+        response = request.when().get(APIConstants.GET_ONE_EMPLOYEE_URI);
     }
 
     @Then("the status code for this employee is {int}")
