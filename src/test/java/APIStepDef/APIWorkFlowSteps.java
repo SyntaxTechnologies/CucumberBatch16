@@ -7,6 +7,10 @@ import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import org.junit.Assert;
 
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 
@@ -75,5 +79,27 @@ public class APIWorkFlowSteps {
     public void the_employee_id_must_match_with_globally_stored_employee_id(String empId) {
         String temporaryEmpid = response.jsonPath().getString(empId);
         Assert.assertEquals(employee_id, temporaryEmpid);
+    }
+
+    @Then("this employee data at {string} object matches with the data used to create the employee")
+    public void this_employee_data_at_object_matches_with_the_data_used_to_create_the_employee
+            (String employeeObject, io.cucumber.datatable.DataTable dataTable) {
+        // Write code here that turns the phrase above into concrete actions
+        List<Map<String, String>> expectedData = dataTable.asMaps();
+        //since we need whole object, we are calling .get method instead of .getString method
+        Map<String, String> actualData =  response.body().jsonPath().get(employeeObject);
+
+        for (Map<String, String> map :expectedData
+             ) {
+            //to keep the order and to avoid duplicates
+            Set<String> keys = map.keySet();
+            for (String key:keys
+                 ) {
+                //from the key, we will get value
+               String expectedValue = map.get(key);
+               String actualValue = actualData.get(key);
+               Assert.assertEquals(expectedValue, actualValue);
+            }
+        }
     }
 }

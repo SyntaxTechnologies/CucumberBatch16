@@ -922,7 +922,11 @@ class 6 -
     create step definition
     write code in step definition
 
+class 7 -
+recap - feature file - we wrote scenario for creating an employee
+    -- package - separate package, we created for API scenarios
 
+    -- we created JWT via automation.
 
 
 
