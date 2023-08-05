@@ -7,6 +7,7 @@ import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import org.junit.Assert;
 import utils.APIConstants;
+import utils.APIPayloadConstants;
 
 import java.util.List;
 import java.util.Map;
@@ -38,15 +39,7 @@ public class APIWorkFlowSteps {
         request = given().header(APIConstants.HEADER_CONTENT_TYPE_KEY,
                         APIConstants.HEADER_CONTENT_TYPE_VALUE).
                 header(APIConstants.HEADER_AUTHORIZATION_KEY, GenerateTokenStep.token).
-                body("{\n" +
-                        "  \"emp_firstname\": \"justin\",\n" +
-                        "  \"emp_lastname\": \"azzuri\",\n" +
-                        "  \"emp_middle_name\": \"ms\",\n" +
-                        "  \"emp_gender\": \"M\",\n" +
-                        "  \"emp_birthday\": \"2000-07-21\",\n" +
-                        "  \"emp_status\": \"happy\",\n" +
-                        "  \"emp_job_title\": \"QA\"\n" +
-                        "}");
+                body(APIPayloadConstants.createEmployeePayload());
     }
 
     @When("a POST call is made to create an employee")
@@ -117,5 +110,26 @@ public class APIWorkFlowSteps {
                Assert.assertEquals(expectedValue, actualValue);
             }
         }
+    }
+
+    @Given("a request is prepared for creating an employee using json payload")
+    public void a_request_is_prepared_for_creating_an_employee_using_json_payload() {
+        request = given().header(APIConstants.HEADER_CONTENT_TYPE_KEY,
+                        APIConstants.HEADER_CONTENT_TYPE_VALUE).
+                header(APIConstants.HEADER_AUTHORIZATION_KEY, GenerateTokenStep.token).
+                body(APIPayloadConstants.createEmployeeJsonPayload());
+    }
+
+    @Given("a request is prepared for creating an employee with data {string} , {string} , {string} , {string} , {string} , {string} , {string}")
+    public void a_request_is_prepared_for_creating_an_employee_with_data
+            (String fn, String ln, String mn,
+             String gender, String dob,
+             String status, String jobTitle) {
+        request = given().header(APIConstants.HEADER_CONTENT_TYPE_KEY,
+                        APIConstants.HEADER_CONTENT_TYPE_VALUE).
+                header(APIConstants.HEADER_AUTHORIZATION_KEY, GenerateTokenStep.token).
+                body(APIPayloadConstants.
+                        createEmployeeJsonPayloadDynamic
+                                (fn,ln,mn,gender,dob,status,jobTitle));
     }
 }

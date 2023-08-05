@@ -21,3 +21,19 @@ Feature: Syntax API HRMS Flow
     |emp_firstname|emp_lastname|emp_middle_name|emp_gender|emp_birthday|emp_status|emp_job_title|
     |justin       |azzuri      |ms             |Male      |2000-07-21  |Happy     |QA           |
 
+
+  @json
+  Scenario: Creating an employee using json body
+    Given a request is prepared for creating an employee using json payload
+    When a POST call is made to create an employee
+    Then the status code for creating an employee is 201
+    And the employee created contains key "Message" and value "Employee Created"
+    And the employee id "Employee.employee_id" is stored as a global variable
+
+  @dynamic
+  Scenario: Creating an employee using highly dynamic scenario
+    Given a request is prepared for creating an employee with data "justin" , "azzuri" , "ms" , "M" , "2000-07-21" , "confirmed" , "QA"
+    When a POST call is made to create an employee
+    Then the status code for creating an employee is 201
+    And the employee created contains key "Message" and value "Employee Created"
+    And the employee id "Employee.employee_id" is stored as a global variable
