@@ -26,10 +26,6 @@ import org.junit.runner.RunWith;
       plugin = {"pretty","html:target/cucumber.html","json:target/cucumber.json",
                 "rerun:target/failed.txt"}
 
-
-
-
-
 )
 
 public class RunnerClass {
